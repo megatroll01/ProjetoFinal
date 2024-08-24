@@ -119,5 +119,3 @@ As principais dependências do frontend são:
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
-
-Se precisar de mais alguma coisa, é só avisar!
