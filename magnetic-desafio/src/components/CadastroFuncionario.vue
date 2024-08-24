@@ -1,7 +1,7 @@
 <template>
   <v-container class="pa-4">
     <!-- Formulário para Cadastro/Atualização de Funcionário -->
-    <v-form ref="form" @submit.prevent="isEditing ? updateFuncionario() : submitForm()">
+    <v-form v-if="permitidoCadastrar" ref="form" @submit.prevent="isEditing ? updateFuncionario() : submitForm()">
       <v-row>
         <v-col cols="12">
           <h1 class="text-center">{{ isEditing ? 'Editar Funcionário' : 'Cadastro de Funcionário' }}</h1>
@@ -115,13 +115,13 @@
           <td>{{ item.telefone }}</td>
           <td>{{ item.login }}</td>
           <td>
-            <v-btn @click="editFuncionario(item)" icon>
+            <v-btn @click="editFuncionario(item)" icon :disabled="!permitidoCadastrar">
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
             <v-btn
               @click="removerFuncionario(item)"
               icon
-              :disabled="!podeRemover(item)"
+              :disabled="!podeRemover(item)|| !permitidoCadastrar"
             >
               <v-icon>mdi-delete</v-icon>
             </v-btn>

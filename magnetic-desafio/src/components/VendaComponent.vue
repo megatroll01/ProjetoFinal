@@ -21,7 +21,7 @@
             <v-btn @click="adicionarProduto(index)" color="primary" outlined>
               <v-icon left>mdi-plus</v-icon>Adicionar
             </v-btn>
-            <v-btn @click="removerProduto(index)" :disabled="!produto.quantidadeSelecionada" outlined>
+            <v-btn @click="removerProduto(index)" :disabled="produto.quantidadeSelecionada < 1" outlined>
               <v-icon left>mdi-minus</v-icon>Remover
             </v-btn>
           </v-card-actions>

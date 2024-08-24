@@ -18,13 +18,13 @@ const routes = [
     path: '/dashboard', 
     name: 'Dashboard', 
     component: Dashboard, 
-    meta: { requiresAuth: true, requiresAccessLevel: [0] } 
+    meta: { requiresAuth: true, requiresAccessLevel: [0,1,2] } 
   },
   { 
     path: '/cadastro-funcionario', 
     name: 'CadastroFuncionario', 
     component: CadastroFuncionario, 
-    meta: { requiresAuth: true, requiresAccessLevel: [0, 1] } 
+    meta: { requiresAuth: true, requiresAccessLevel: [0, 1,2] } 
   },
   { 
     path: '/cadastro-produtos', 
