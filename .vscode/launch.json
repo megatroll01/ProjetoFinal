@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot App",
+            "request": "launch",
+            "mainClass": "com.my.work.manager.myworkmanager_back.MyworkmanagerBackApplication",
+            "projectName": "myworkmanager",
+            "env": {
+            }
+        }
+    ]
+}
