@@ -1,6 +1,3 @@
-Aqui está uma versão atualizada do README para refletir a inclusão do frontend em Vue.js:
-
----
 
 # Magnetic Desafio
 
