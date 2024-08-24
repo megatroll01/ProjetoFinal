@@ -30,7 +30,21 @@ export default {
   },
   computed: {
     chartData() {
-      const labels = [...new Set([...this.salesData.funcionario.map(item => item.mes), ...this.salesData.geral.map(item => item.mes)])];
+      const labels = [...new Set([
+        ...this.salesData.funcionario.map(item => item.mes),
+        ...this.salesData.geral.map(item => item.mes)
+      ])].sort((a, b) => new Date(a) - new Date(b));
+
+      const funcionarioData = labels.map(label => {
+        const item = this.salesData.funcionario.find(data => data.mes === label);
+        return item ? item.total : 0;
+      });
+
+      const geralData = labels.map(label => {
+        const item = this.salesData.geral.find(data => data.mes === label);
+        return item ? item.total : 0;
+      });
+
       return {
         labels,
         datasets: [
@@ -38,20 +52,14 @@ export default {
             label: 'Venda do Usuário',
             backgroundColor: '#f87979',
             borderColor: '#f87979',
-            data: labels.map(label => {
-              const item = this.salesData.funcionario.find(data => data.mes === label);
-              return item ? item.total : 0;
-            }),
+            data: funcionarioData,
             fill: false
           },
           {
             label: 'Venda Geral',
             backgroundColor: '#7c9aff',
             borderColor: '#7c9aff',
-            data: labels.map(label => {
-              const item = this.salesData.geral.find(data => data.mes === label);
-              return item ? item.total : 0;
-            }),
+            data: geralData,
             fill: false
           }
         ]

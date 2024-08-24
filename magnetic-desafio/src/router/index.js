@@ -1,4 +1,3 @@
-// src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../components/LoginComponent.vue';
 import Dashboard from '../components/DashboardComponent.vue';
@@ -32,20 +31,26 @@ const routes = [
     component: CadastroProdutos, 
     meta: { requiresAuth: true, requiresAccessLevel: [0, 1, 2] } 
   },
-  { path: '/:pathMatch(.*)*', redirect: '/' } // Redireciona para o login se a rota não for encontrada
+  { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 
 function usuarioAutenticado() {
-  return localStorage.getItem('token') !== null;
+  const token = localStorage.getItem('token');
+  return token !== null && token !== '';
+}
+
+function recuperarUsuario() {
+  const usuario = localStorage.getItem('usuario');
+  return usuario ? JSON.parse(usuario) : null;
 }
 
 router.beforeEach((to, from, next) => {
-  const usuario = JSON.parse(localStorage.getItem('usuario'));
+  const usuario = recuperarUsuario();
 
   if (to.meta.requiresAuth && !usuarioAutenticado()) {
     next({ name: 'Login' });
