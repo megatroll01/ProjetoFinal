@@ -40,7 +40,7 @@ spring.jpa.show-sql=true
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/seuusuario/myworkmanager_back.git
+    git clone [https://github.com/seuusuario/myworkmanager_back.git](https://github.com/megatroll01/ProjetoFinal.git)
     cd myworkmanager_back
     ```
 
@@ -76,7 +76,7 @@ Certifique-se de que você tem o [Node.js](https://nodejs.org/) e o [npm](https:
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/seuusuario/magnetic_desafio.git
+    git clone [https://github.com/seuusuario/magnetic_desafio.git](https://github.com/megatroll01/ProjetoFinal.git)
     cd magnetic_desafio
     ```
 
