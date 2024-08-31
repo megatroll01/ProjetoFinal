@@ -1,5 +1,5 @@
 
-# Magnetic Desafio
+# Magnetic Store
 
 Este projeto é uma aplicação completa que inclui um backend desenvolvido com Spring Boot e um frontend desenvolvido com Vue.js.
 
